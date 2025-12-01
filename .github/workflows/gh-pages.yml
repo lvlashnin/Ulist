@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -20,21 +21,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Build Angular with correct base-href
       - name: Build Angular project
-        run: npm run build -- --output-path=dist/ulist --base-href /Ulist/
+        run: npm run build -- --base-href /Ulist/
 
+      # ADD 404.html for Angular SPA on GitHub Pages
       - name: Copy 404 fallback
-        run: cp dist/ulist/index.html dist/ulist/404.html
+        run: cp dist/ulist/browser/index.html dist/ulist/browser/404.html
 
+      # Deploy to gh-pages branch
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/ulist
+          publish_dir: dist/ulist/browser
           publish_branch: gh-pages
-      - name: Build Angular project
-        run: npm run build -- --output-path=dist/ulist --base-href /Ulist/
-
-      - name: Check dist contents
-        run: ls -R dist
-
