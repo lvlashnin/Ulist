@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Todo } from './types/todo';
 import { TodosService } from './services/todos';
@@ -38,11 +38,20 @@ export class AppComponent implements OnInit {
     this.applyFilterAndSort();
   }
 
-  constructor(private todosService: TodosService, private messageService: MessageService) {}
+  constructor(
+    private todosService: TodosService,
+    private messageService: MessageService,
+    private cd: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.todosService.todos$.subscribe((todos) => {
       this.todos = todos;
+    });
+
+    this.todosService.todos$.subscribe((todos) => {
+      this.todos = todos;
+      this.cd.markForCheck();
     });
 
     this.todosService.loadTodos().subscribe({

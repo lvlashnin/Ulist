@@ -29,7 +29,7 @@ export class TodoComponent implements OnChanges {
   @Output() toggle = new EventEmitter<void>();
   @Output() rename = new EventEmitter<string>();
   @Output() prioritize = new EventEmitter<void>();
-  @Output() priorityChange = new EventEmitter<'Low' | 'Medium' | 'High'>();
+  @Output() priorityChange = new EventEmitter<Priority>();
 
   @Input() todo!: Todo;
 

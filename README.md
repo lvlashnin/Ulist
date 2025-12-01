@@ -8,7 +8,7 @@
 
 You can see the project in action or browse the code repository here:
 
-**[https://github.com/lvlashnin/Ulist](https://github.com/lvlashnin/Ulist)**
+**[https://github.com/lvlashnin/Ulist](https://lvlashnin.github.io/Ulist/)**
 
 ---
 
