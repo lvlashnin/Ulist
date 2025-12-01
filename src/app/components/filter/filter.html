@@ -1,0 +1,17 @@
+<nav class="filter">
+  <a class="filter__link" (click)="setFilter('all')" [class.selected]="active === 'all'"> All </a>
+
+  <a class="filter__link" (click)="setFilter('active')" [class.selected]="active === 'active'">
+    Active
+  </a>
+
+  <a class="filter__link" (click)="toggleSort()" [class.selected]="sorted === 'priority'"> Sort </a>
+
+  <a
+    class="filter__link"
+    (click)="setFilter('completed')"
+    [class.selected]="active === 'completed'"
+  >
+    Completed
+  </a>
+</nav>

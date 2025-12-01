@@ -1,0 +1,71 @@
+<div class="todo" [class.completed]="todo.completed">
+  <div class="todo__election-block">
+    <label class="todo__status-label">
+      <input
+        type="checkbox"
+        class="todo__status"
+        [checked]="todo.completed"
+        (change)="onToggle()"
+      />
+    </label>
+
+    <div class="todo__dropdown" [class.is-active]="dropdownOpen">
+      <div class="dropdown-trigger">
+        <button
+          class="button"
+          aria-haspopup="true"
+          aria-controls="dropdown-menu"
+          (click)="toggleDropdown()"
+        >
+          <span
+            class="priority-badge"
+            [ngClass]="{
+              'priority-low': todo.priority === 'Low',
+              'priority-medium': todo.priority === 'Medium',
+              'priority-high': todo.priority === 'High'
+            }"
+          ></span>
+          <span class="icon is-small">▾</span>
+        </button>
+      </div>
+      <div class="dropdown-menu" id="dropdown-menu" role="menu">
+        <div class="dropdown-content">
+          <a class="dropdown-item" (click)="setPriority('Low')">
+            <span class="priority-badge priority-low"></span> Low
+          </a>
+          <a class="dropdown-item" (click)="$event.preventDefault(); setPriority('Medium')">
+            <span class="priority-badge priority-medium"></span> Medium
+          </a>
+          <a class="dropdown-item" (click)="setPriority('High')">
+            <span class="priority-badge priority-high"></span> High
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form *ngIf="editing; else titleBlock" (ngSubmit)="save()">
+    <input
+      type="text"
+      class="todo__title-field"
+      placeholder="Empty todo will be deleted"
+      name="title"
+      [(ngModel)]="title"
+      (keyup.escape)="editing = false"
+      (blur)="save()"
+    />
+  </form>
+
+  <ng-template #titleBlock>
+    <span class="todo__title" (dblclick)="edit()">
+      {{ todo.title }}
+    </span>
+
+    <button class="todo__remove" (click)="onDelete()">x</button>
+  </ng-template>
+
+  <div class="modal overlay" [class.is-active]="false">
+    <div class="modal-background has-background-white-ter"></div>
+    <div class="loader"></div>
+  </div>
+</div>
