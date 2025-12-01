@@ -23,6 +23,9 @@ jobs:
       - name: Build Angular project
         run: npm run build -- --output-path=dist/ulist --base-href /Ulist/
 
+      - name: Copy 404 fallback
+        run: cp dist/ulist/index.html dist/ulist/404.html
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
