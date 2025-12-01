@@ -12,6 +12,7 @@ import {
   HostListener,
 } from '@angular/core';
 import { Todo } from '../../types/todo';
+import { Priority } from '../../types/todo';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -93,7 +94,7 @@ export class TodoComponent implements OnChanges {
     }
   }
 
-  setPriority(p: 'Low' | 'Medium' | 'High') {
+  setPriority(p: Priority) {
     console.log('[TodoComponent] priorityChange emit', this.todo?.id, p);
     this.priorityChange.emit(p);
     this.dropdownOpen = false;

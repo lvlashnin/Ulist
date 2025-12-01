@@ -1,59 +1,64 @@
-# Ulist
+# 🚀 Ulist: Your Ultimate List Manager
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+**Ulist** is a modern, intuitive, and powerful application for managing all your lists in one place. Whether it's for daily tasks, project management, or grocery shopping, Ulist helps you stay organized and productive with a clean and user-friendly interface.
 
-## Development server
+---
 
-To start a local development server, run:
+## ✨ Demo
 
-```bash
-ng serve
-```
+You can see the project in action or browse the code repository here:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+**[https://github.com/lvlashnin/Ulist](https://github.com/lvlashnin/Ulist)**
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🌟 Key Features
 
-```bash
-ng generate component component-name
-```
+- **Intuitive Interface:** Clean, modern, and easy-to-navigate user interface.
+- **Multiple Lists:** Create and manage multiple lists for different purposes.
+- **Task Management:** Add, edit, delete, and mark tasks as complete.
+- **Responsive Design:** Works beautifully on desktop, tablets, and mobile devices.
+- **Customization:** Personalize your lists with different colors and icons.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🛠️ Technologies Used
 
-## Building
+This project is built with a modern tech stack:
 
-To build the project run:
+- **Frontend:** Angular
+- **Styling:** CSS Modules Bulma
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📦 Getting Started
 
-## Running unit tests
+To get a local copy up and running, follow these simple steps.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Prerequisites
 
-```bash
-ng test
-```
+Make sure you have Node.js and npm installed on your machine.
 
-## Running end-to-end tests
+- npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-For end-to-end (e2e) testing, run:
+### Installation
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1.  Clone the repo
+    ```sh
+    git clone https://github.com/lvlashnin/Ulist.git
+    ```
+2.  Navigate to the project directory
+    ```sh
+    cd Ulist
+    ```
+3.  Install NPM packages
+    ```sh
+    npm install
+    ```
+4.  Start the development server
+    ```sh
+    npm start
+    ```
