@@ -21,7 +21,7 @@ jobs:
         run: npm ci
 
       - name: Build Angular project
-        run: npm run build -- --output-path=dist/ulist --base-href /Ulist/
+        run: npm run build -- --output-path=dist/ulist --base-href /ulist/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
